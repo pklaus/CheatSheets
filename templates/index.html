@@ -2,13 +2,10 @@
 {% block content %}
 
 {% comment %}
-This is the django template for the generation of the overview over all the projects in this repository.
-Find the template here: http://www.gamexe.net/templates/
-
-for Markdown filtering with Django see: http://www.freewisdom.org/projects/python-markdown/Django
+This is the index page.
 {% endcomment %}
 
-    <h1>This is a Collection of Cheat Sheets</h1>
+    <h1>Cheat Sheets</h1>
     {% for cheatsheet in cheatsheets %}
     <div class="{% cycle 'row1' 'row2' %}"><a name="{{cheatsheet.name}}"></a>
         <span class="inline_header">{{cheatsheet.name}}</span> <span class="tools"><a href="{{cheatsheet.url}}">{{cheatsheet.name}}</a></span>
