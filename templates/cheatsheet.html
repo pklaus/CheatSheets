@@ -1,0 +1,33 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "DTD/xhtml1-transitional.dtd">
+{% comment %}
+This is the django template for the generation of the overview over all the projects in this repository.
+Find the template here: http://www.gamexe.net/templates/
+
+for Markdown filtering with Django see: http://www.freewisdom.org/projects/python-markdown/Django
+{% endcomment %}
+{% load markup %}
+<html>
+<head>
+<title>{{ title }}</title>
+<meta http-equiv="Content-Language" content="en-us" />
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+<link href="css/cheatsheet.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+
+<div id="container">
+
+<div id="site_content">
+
+         <div class="description">{{cheatsheet_markdown|markdown}}</div>
+</div>
+
+
+<div class="line">&nbsp;</div>
+
+<div id="footer">Cheat Sheet from <a href="http://github.com/pklaus/CheatSheets">github.com/pklaus/CheatSheets</a>.</div>
+
+</div>
+
+</body>
+</html>
