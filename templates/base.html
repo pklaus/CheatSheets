@@ -1,0 +1,27 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "DTD/xhtml1-transitional.dtd">
+{% comment %}
+Base Template for Cheat Sheats
+{% endcomment %}
+<html>
+<head>
+<title>{{ title }}</title>
+<meta http-equiv="Content-Language" content="en-us" />
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+<link href="css/cheatsheet.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+
+<div id="container">
+    <!-- CONTENT -->
+    <div id="site_content">
+       {% block content %}{% endblock %}
+    </div> 
+
+<div class="line">&nbsp;</div>
+
+<div id="footer">Cheat Sheets from <a href="http://github.com/pklaus/CheatSheets">github.com/pklaus/CheatSheets</a>.</div>
+
+</div>
+
+</body>
+</html>
