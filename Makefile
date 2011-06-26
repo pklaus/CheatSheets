@@ -5,8 +5,8 @@ all: doc
 doc :
 	./generate_html.py
 
-read-doc:
-	firefox generated_html/index.html
+read:
+	open generated_html/index.html
 
 .PHONY : clean
 clean :
