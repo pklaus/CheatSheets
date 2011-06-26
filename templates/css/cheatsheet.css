@@ -40,6 +40,9 @@ code {
    http://www.sohtanaka.com/web-design/smart-columns-w-css-jquery/    */
 
 div#cheatsheet {
+/* For compatibility etc. see:
+   http://www.quirksmode.org/css/multicolumn.html
+   http://www.w3schools.com/css3/css3_pr_column-count.asp */
   -moz-column-count: 3; /* Firefox */
   -webkit-column-count: 3; /* Safari and Chrome */
   column-count: 3;

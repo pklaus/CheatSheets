@@ -27,6 +27,12 @@ except:
     show_requirements("django")
     sys.exit(1)
 
+try:
+    import markdown
+except:
+    show_requirements("markdown")
+    sys.exit(1)
+
 settings.configure(DEBUG=True, 
     TEMPLATE_DEBUG=True,
     INSTALLED_APPS=('django.contrib.markup',),
@@ -53,14 +59,10 @@ def main():
     for cheatsheet_name in cheatsheets_list:
         cheatsheet_file = open(path+'/'+cheatsheet_name,'r')
         content = cheatsheet_file.read()
-        cheatsheets.append({ 'url':  cheatsheet_name+'.html',
+        cheatsheets.append({ 'url':  cheatsheet_name.replace('.md','')+'.html',
                              'name': cheatsheet_name.replace('.md','') })
-        output_file_handle = open(OUTPUT_DIRECTORY+'/'+cheatsheet_name+'.html','w')
-        try:
-            output_file_handle.write(loader.render_to_string('cheatsheet.html', { 'title': cheatsheet_name, 'cheatsheet_markdown': content}))
-        except TemplateSyntaxError:
-            show_requirements("markdown")
-            sys.exit(1)
+        output_file_handle = open(OUTPUT_DIRECTORY+'/'+cheatsheets[-1]['url'],'w')
+        output_file_handle.write(loader.render_to_string('cheatsheet.html', { 'title': cheatsheet_name, 'cheatsheet_markdown': content}))
 
     output_file_handle = open(OUTPUT_DIRECTORY+'/'+'index.html','w')
     output_file_handle.write(loader.render_to_string('index.html',{ 'title': 'Cheat Sheets for Free', 'cheatsheets': cheatsheets, }))
