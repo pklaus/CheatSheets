@@ -16,6 +16,8 @@
 
 
 
+      <p><a href="index.html">Back to all Cheat Sheets</a>.</p>
+      
       <div id="cheatsheet"><h1>VIM Text Editor</h1>
 <h2>The three modes of vi</h2>
 <ul>
@@ -29,12 +31,26 @@
 <code>O</code> enter a new line below<br />
 </p>
 <h2>Cutting and Pasting</h2>
+<p><code>yy</code> yank (copy) the current line<br />
+<code>3yy</code> yank the current and 2 more lines<br />
+<code>p</code> paste the yanked content after current position<br />
+<code>P</code> paste the yanked content before the current position<br />
+</p>
+<h2>Deleting</h2>
 <p><code>x</code> delete current character<br />
 <code>8x</code> delete 8 characters to the right<br />
 <code>dd</code> delete the current line<br />
 <code>4dd</code> delete the current plus 3 more lines<br />
+<code>d0</code> delete from position to beginning of line<br />
+<code>d$</code> delete from current position to end of line<br />
 </p>
-<h2>Deleting</h2>
+<h2>Navigation</h2>
+<p><code>1G</code> Go to the very first line<br />
+<code>G</code> go to the very last line<br />
+<code>H</code> go to the first currently visible line<br />
+<code>M</code> go to the middle of the currently visible lines<br />
+<code>L</code> go to the last currently visible line<br />
+</p>
 <h2>Searching</h2>
 <p><code>/foo</code> search for <em>foo</em><br />
 <code>n</code> repeat last search<br />
