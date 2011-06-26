@@ -38,3 +38,17 @@ code {
 
 /* Intelligent Floating Columns with jQuery:
    http://www.sohtanaka.com/web-design/smart-columns-w-css-jquery/    */
+
+div#cheatsheet {
+  -moz-column-count: 3; /* Firefox */
+  -webkit-column-count: 3; /* Safari and Chrome */
+  column-count: 3;
+  -moz-column-gap: 1%;
+  -webkit-column-gap: 1%;
+  column-gap: 1%;
+}
+div#cheatsheet h1 {
+  text-align: center;
+  -webkit-column-span: all; /* Chrome */
+  column-span: all;
+}
