@@ -6,9 +6,10 @@ This is the index page.
 {% endcomment %}
 
     <h1>Cheat Sheets</h1>
+    <p>Currently the following cheat sheets are available:</p>
     {% for cheatsheet in cheatsheets %}
-    <div class="{% cycle 'row1' 'row2' %}"><a name="{{cheatsheet.name}}"></a>
-        <span class="inline_header">{{cheatsheet.name}}</span> <span class="tools"><a href="{{cheatsheet.url}}">{{cheatsheet.name}}</a></span>
+    <div class="{% cycle 'row1' 'row2' %}">
+        <a href="{{cheatsheet.url}}">{{cheatsheet.name}}</a>
     </div>
     {% endfor %}
 

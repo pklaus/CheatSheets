@@ -54,7 +54,7 @@ def main():
         cheatsheet_file = open(path+'/'+cheatsheet_name,'r')
         content = cheatsheet_file.read()
         cheatsheets.append({ 'url':  cheatsheet_name+'.html',
-                             'name': cheatsheet_name })
+                             'name': cheatsheet_name.replace('.md','') })
         output_file_handle = open(OUTPUT_DIRECTORY+'/'+cheatsheet_name+'.html','w')
         try:
             output_file_handle.write(loader.render_to_string('cheatsheet.html', { 'title': cheatsheet_name, 'cheatsheet_markdown': content}))
@@ -63,7 +63,7 @@ def main():
             sys.exit(1)
 
     output_file_handle = open(OUTPUT_DIRECTORY+'/'+'index.html','w')
-    output_file_handle.write(loader.render_to_string('index.html',{ 'cheatsheets': cheatsheets, }))
+    output_file_handle.write(loader.render_to_string('index.html',{ 'title': 'Cheat Sheets for Free', 'cheatsheets': cheatsheets, }))
 
     copy_tree( CSS_FOLDER, OUTPUT_DIRECTORY+'/css')
     print "Finished creating the HTML versions of the Markdown Cheat Sheets."
