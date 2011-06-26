@@ -31,3 +31,10 @@ div#site_content {
 div#footer {
     text-align: center;
 }
+code {
+    background-color: #EEE;
+    padding: 0px 3px;
+}
+
+/* Intelligent Floating Columns with jQuery:
+   http://www.sohtanaka.com/web-design/smart-columns-w-css-jquery/    */
