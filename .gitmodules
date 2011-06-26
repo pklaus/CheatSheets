@@ -1,0 +1,3 @@
+[submodule "generated_html"]
+	path = generated_html
+	url = git@github.com:pklaus/CheatSheets.git
