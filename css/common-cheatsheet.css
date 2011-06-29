@@ -1,0 +1,73 @@
+#site-content {
+  padding: 10px 10%;
+  min-width: 760px;
+  position: relative;
+  top: 5ex;
+  margin-bottom: 3ex;
+}
+
+/* Intelligent Floating Columns with jQuery:
+   http://www.sohtanaka.com/web-design/smart-columns-w-css-jquery/    */
+
+#cheatsheet {
+/* For compatibility etc. see:
+   http://www.quirksmode.org/css/multicolumn.html
+   http://www.w3schools.com/css3/css3_pr_column-count.asp */
+  -moz-column-count: 3; /* Firefox */
+  -webkit-column-count: 3; /* Safari and Chrome */
+  column-count: 3;
+  -moz-column-gap: 1%;
+  -webkit-column-gap: 1%;
+  column-gap: 1%;
+}
+#cheatsheet h1 {
+  text-align: center;
+  -webkit-column-span: all; /* Chrome */
+  column-span: all;
+}
+
+#indicatorbar, #footer {
+  color: #000;
+  background-image: -webkit-gradient(
+      linear,
+      left bottom,
+      left top,
+      color-stop(0.26, #29F),
+      color-stop(0.82, #4BF)
+  );
+  background-image: -moz-linear-gradient(
+      center bottom,
+      #29F 26%,
+      #4BF 82%
+  );
+}
+#indicatorbar div {
+  display: inline; 
+}
+#indicatorbar #backlink {
+  padding: 1.5ex;
+  position: absolute;
+  left: 0px;
+}
+#indicatorbar #styleselect{
+  padding: 6px;
+  position: absolute;
+  right: 0px;
+}
+#indicatorbar {
+  height: 5ex;
+  top: 0px;
+}
+#indicatorbar, #footer {
+  width: 100%;
+  position: fixed; 
+  left: 0;
+  right: 0;
+  z-index: 1000;
+}
+#footer {
+  height: 3.5ex;
+  text-align: center;
+  bottom: 0;
+  padding-top: 6px;
+}

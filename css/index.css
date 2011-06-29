@@ -1,0 +1,27 @@
+body, p {
+  font: normal 1em/1.5em arial, helvetica, sans-serif;
+  color: #006;
+
+}
+#container {
+  padding: 20px;
+  border: 1px solid #006;
+  -moz-border-radius: 8px;
+  border-radius: 8px;
+  width: 400px;
+  margin: 10% auto;
+}
+.linkcontainer a:hover {
+  background-color: #FCC;
+}
+.linkcontainer a {
+  border: 1px solid #AAA;
+  -moz-border-radius: 4px;
+  border-radius: 4px;
+  padding: 3px 5px;
+  text-decoration: none;
+  color: #E00;
+}
+#footer {
+  border-top: 1px dashed #006;
+}
