@@ -3,21 +3,26 @@
 Base Template for Cheat Sheats
 {% endcomment %}
 <html>
-<head>
-<title>{{ title }}</title>
-<meta http-equiv="Content-Language" content="en-us" />
-<meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
-<link href="css/cheatsheet.css" rel="stylesheet" type="text/css" />
-</head>
-<body>
-
-<div id="container">
-    <!-- CONTENT -->
-    <div id="site_content">
-       {% block content %}{% endblock %}
-    </div> 
-
-    <div id="footer">Cheat Sheets from <a href="http://github.com/pklaus/CheatSheets">github.com/pklaus/CheatSheets</a>.</div>
-</div>
-</body>
+  <head>
+    <title>{% block title %}Open Cheat Sheets Project{% endblock %}</title>
+    <meta http-equiv="Content-Language" content="en-us" />
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+    <link href="css/common-all-site.css" rel="stylesheet" type="text/css" />
+    {% block extrahead %}{% endblock %}
+  </head>
+  <body>
+    <div id="container">
+        <!-- An optional HEADER-->
+        <div id="indicatorbar">
+          {% block indicatorbar %}{% endblock %}
+        </div>
+        <!-- CONTENT -->
+        <div id="site-content">
+          {% block content %}{% endblock %}
+        </div> 
+        <div id="footer">
+          {% block footer %} Cheat Sheets &copy; 2011, Philipp Klaus &nbsp;&nbsp;/ <a href="http://github.com/pklaus/CheatSheets">github.com/pklaus/CheatSheets</a>{% endblock %}
+        </div>
+    </div>
+  </body>
 </html>

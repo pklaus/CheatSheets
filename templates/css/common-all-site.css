@@ -1,0 +1,21 @@
+html, body {
+  height: 100%;
+}
+body, div, span {
+  margin: 0;
+  padding: 0;
+}
+a {
+  color: #22F;
+  padding: 2px 4px;
+  margin: 2px 1px;
+  text-decoration: none;
+}
+a:hover {
+  color: #00C;
+  background: #FF0;
+  padding: 1px 3px;
+  border: 1px solid #006;
+  -moz-border-radius: 2px;
+  border-radius: 2px;
+}

@@ -62,10 +62,10 @@ def main():
         cheatsheets.append({ 'url':  cheatsheet_name.replace('.md','')+'.html',
                              'name': cheatsheet_name.replace('.md','') })
         output_file_handle = open(OUTPUT_DIRECTORY+'/'+cheatsheets[-1]['url'],'w')
-        output_file_handle.write(loader.render_to_string('cheatsheet.html', { 'title': cheatsheet_name, 'cheatsheet_markdown': content}))
+        output_file_handle.write(loader.render_to_string('cheatsheet.html', { 'cheatsheet': {'title': cheatsheet_name, 'content': content}}).encode("utf-8"))
 
     output_file_handle = open(OUTPUT_DIRECTORY+'/'+'index.html','w')
-    output_file_handle.write(loader.render_to_string('index.html',{ 'title': 'Cheat Sheets for Free', 'cheatsheets': cheatsheets, }))
+    output_file_handle.write(loader.render_to_string('index.html',{ 'title': 'Cheat Sheets for Free', 'cheatsheets': cheatsheets, }).encode("utf-8"))
 
     copy_tree( CSS_FOLDER, OUTPUT_DIRECTORY+'/css')
     print "Finished creating the HTML versions of the Markdown Cheat Sheets."

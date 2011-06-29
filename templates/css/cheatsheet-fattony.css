@@ -1,0 +1,21 @@
+body {
+    color: #66665E;
+    font-family: Arial,Helvetica,sans-serif;
+    font: bold 1em/1.5em arial, helvetica, sans-serif;
+    font-size: 13px;
+}
+h1, h2, h3 {
+    color: #0C95C9;
+    font-family: "Trebuchet MS",Georgia,"Times New Roman",Times,serif;
+}
+h1 {
+    font-size: 44px;
+}
+h2 {
+    font-size: 18px;
+}
+code {
+    background-color: #CCC;
+    color: #004;
+    padding: 0px 3px;
+}

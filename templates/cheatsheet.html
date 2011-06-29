@@ -1,16 +1,47 @@
 {% extends "base.html" %}
 {% load markup %}
-{% block content %}
 
 {% comment %}
-This is the django template for the generation of the overview over all the projects in this repository.
-Find the template here: http://www.gamexe.net/templates/
-
-for Markdown filtering with Django see: http://www.freewisdom.org/projects/python-markdown/Django
+For Markdown filtering with Django see: http://www.freewisdom.org/projects/python-markdown/Django
 {% endcomment %}
 
-      <p><a href="index.html">Back to all Cheat Sheets</a>.</p>
-      
-      <div id="cheatsheet">{{cheatsheet_markdown|markdown}}</div>
+{% block title %}{{ cheatsheet.title }}{% endblock %}
 
+{% block extrahead %}
+  <link href="css/common-cheatsheet.css" rel="stylesheet">
+  <link rel="stylesheet" type="text/css" title="lanky" href="css/cheatsheet-lanky.css">
+  <link rel="alternate stylesheet" type="text/css" title="fattony" href="css/cheatsheet-fattony.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.6.1/jquery.min.js" type="text/javascript"></script>
+  <script type="text/javascript">
+    function switch_style_to ( css_title ) {
+      var i, link_tag ;
+      $("link").each( function() {
+        if ((this.rel.indexOf("stylesheet") != -1 ) && this.title) {
+          this.disabled = true ;
+          if (this.title == css_title) {
+            this.disabled = false ;
+          }
+        }
+      });  
+    }
+    $(function() {
+      $('#styleselect select').change({msg: "ok"},  function(event) {
+        switch_style_to(event.target.value);
+      });
+    });
+  </script>
+{% endblock %}
+
+{% block content %}
+      <div id="cheatsheet">{{cheatsheet.content|markdown}}</div>
 {% endblock %} 
+
+{% block indicatorbar %}
+  <div id="backlink"><a href="index.html">← Back to all Cheat Sheets</a></div>
+  <div id="styleselect">Select a style:
+    <select>
+      <option value="lanky" selected>Lanky</option>
+      <option value="fattony">Fat Tony</option>
+    </select>
+  </div>
+{% endblock %}

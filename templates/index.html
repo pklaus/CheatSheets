@@ -1,16 +1,21 @@
 {% extends "base.html" %}
-{% block content %}
-
 {% comment %}
 This is the index page.
 {% endcomment %}
 
+{% block content %}
     <h1>Cheat Sheets</h1>
     <p>Currently the following cheat sheets are available:</p>
-    {% for cheatsheet in cheatsheets %}
-    <div class="{% cycle 'row1' 'row2' %}">
+    <p>
+      {% for cheatsheet in cheatsheets %}
+      <span class="linkcontainer {% cycle 'row1' 'row2' %}">
         <a href="{{cheatsheet.url}}">{{cheatsheet.name}}</a>
-    </div>
-    {% endfor %}
-
+      </span>
+      {% endfor %}
+    </p>
 {% endblock %}
+
+{% block extrahead %}
+  <link href="css/index.css" rel="stylesheet">
+{% endblock %}
+
